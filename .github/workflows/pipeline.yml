@@ -1,0 +1,17 @@
+name: basic ci Pipeline 
+on:
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: list files
+              run: ls -al
+            - name: echo message        
+              run: echo "Pipeline is working..."
+    
