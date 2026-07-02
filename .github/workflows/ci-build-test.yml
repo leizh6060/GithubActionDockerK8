@@ -1,11 +1,15 @@
+name: CI Build and Test
+
 on:
   push:
-    paths:
-      - '02-ci-build-and-test/**'
     branches:
       - main
       - dev
-    
+    paths:
+      - '.github/workflows/ci-build-test.yml'
+      - '02-ci-build-and-test/**'
+  workflow_dispatch:
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
